@@ -3,6 +3,9 @@ import HeroSection from './components/HeroSection'
 import StatsSection from './components/StatsSection'
 import FeaturesSection from './components/FeaturesSection'
 import PathwaysSection from './components/PathwaysSection'
+import TestimonialsSection from './components/TestimonialsSection'
+import CTASection from './components/CTASection'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
       <StatsSection />
       <FeaturesSection />
       <PathwaysSection />
+      <TestimonialsSection />
+      <CTASection />
+      <Footer />
     </div>
   )
 }
