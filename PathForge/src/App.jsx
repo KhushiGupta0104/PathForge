@@ -3,7 +3,7 @@ import HeroSection from './components/HeroSection'
 
 function App() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen">
+    <div className="bg-[#faf7f2] min-h-screen">
       <Navbar />
       <HeroSection />
     </div>

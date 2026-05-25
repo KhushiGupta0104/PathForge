@@ -1,67 +1,97 @@
-import { Zap, Trophy, Flame } from 'lucide-react'
+import { Zap, Trophy, Flame, Star } from 'lucide-react'
 
 function HeroSection() {
   return (
-    <section className="bg-[#0a0a0a] min-h-screen px-8 py-20 flex items-center justify-between gap-12">
+    <section className="bg-[#faf7f2] px-16 py-24 flex items-center gap-20 relative overflow-hidden">
+  
+  {/* Background path */}
+  <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M 100 600 Q 300 400 500 300 Q 700 200 900 250 Q 1100 300 1200 100"
+      stroke="#92400e"
+      strokeWidth="3"
+      strokeDasharray="12 8"
+      fill="none"
+    />
+    <circle cx="100" cy="600" r="6" fill="#92400e" />
+    <circle cx="500" cy="300" r="6" fill="#92400e" />
+    <circle cx="900" cy="250" r="6" fill="#92400e" />
+    <circle cx="1200" cy="100" r="6" fill="#92400e" />
+  </svg>
       
-      <div className="flex-1 max-w-xl">
-        <div className="inline-flex items-center gap-2 bg-[#05966912] border border-[#05966930] text-[#6ee7b7] text-sm px-4 py-2 rounded-full mb-6">
-          <Zap size={14} />
+      {/* Left — Text */}
+      <div className="flex-1">
+        <div className="inline-flex items-center gap-2 bg-[#92400e12] border border-[#92400e25] text-[#92400e] text-xs font-medium px-3 py-1.5 rounded-full mb-8">
+          <Zap size={12} />
           From confused student to job-ready, step by step.
         </div>
 
-        <h1 className="text-6xl font-black text-white leading-tight mb-6">
+        <h1 className="text-5xl font-extrabold text-[#1c1917] leading-tight mb-5">
           Level Up Your <br />
-          <span className="text-[#6ee7b7]">Career Journey</span>
+          <span className="text-[#92400e]">Career Journey</span>
         </h1>
 
-        <p className="text-gray-400 text-lg leading-relaxed mb-8">
+        <p className="text-[#78716c] text-base leading-relaxed mb-8 max-w-md">
           A gamified roadmap platform that helps students become job-ready through structured learning pathways, tasks, XP, badges, and real projects.
         </p>
 
-        <div className="flex gap-4">
-          <button className="bg-[#059669] hover:bg-[#047857] text-white font-semibold px-8 py-3 rounded-xl">
+        <div className="flex gap-3">
+          <button className="bg-[#92400e] hover:bg-[#78350f] text-white font-semibold px-6 py-3 rounded-lg text-sm">
             Start Your Journey
           </button>
-          <button className="border border-[#e8dfc430] text-[#e8dfc4] hover:text-white font-medium px-8 py-3 rounded-xl">
+          <button className="border border-[#e2d9c8] text-[#78716c] hover:text-[#1c1917] hover:border-[#92400e] font-medium px-6 py-3 rounded-lg text-sm">
             Explore Pathways
           </button>
         </div>
+
+        {/* Trust line */}
+        <p className="text-[#78716c] text-xs mt-6">
+          Join <span className="text-[#92400e] font-semibold">10,000+</span> students already on their path
+        </p>
       </div>
 
-      <div className="flex-1 max-w-sm">
-        <div className="bg-[#111] border border-[#05966925] rounded-2xl p-6">
+      {/* Right — Card */}
+      <div className="w-80">
+        <div className="bg-white border border-[#e2d9c8] rounded-2xl p-6 shadow-sm">
           
-          <div className="bg-[#059669] w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
-            <Trophy size={28} className="text-white" />
+          <div className="flex items-center justify-between mb-5">
+            <div>
+              <p className="text-xs text-[#78716c] mb-0.5">Current Level</p>
+              <p className="text-[#1c1917] font-bold text-lg">Level 12</p>
+            </div>
+            <div className="bg-[#92400e] p-2.5 rounded-xl">
+              <Trophy size={20} className="text-white" />
+            </div>
           </div>
 
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-white font-semibold">Total XP</span>
-            <span className="bg-[#05966918] text-[#6ee7b7] text-xs px-3 py-1 rounded-full">Level 12</span>
+          <div className="mb-5">
+            <div className="flex justify-between text-xs mb-1.5">
+              <span className="text-[#78716c]">Total XP</span>
+              <span className="text-[#92400e] font-semibold">4,320 / 5,000</span>
+            </div>
+            <div className="bg-[#f0e8dc] rounded-full h-1.5">
+              <div className="bg-[#92400e] h-1.5 rounded-full" style={{width:'86%'}}></div>
+            </div>
           </div>
 
-          <div className="text-[#e8dfc4] text-sm mb-2">4,320 / 5,000</div>
-          <div className="bg-[#1a1a1a] rounded-full h-2 mb-4">
-            <div className="bg-[#059669] h-2 rounded-full" style={{width:'86%'}}></div>
+          <div className="mb-5">
+            <p className="text-xs text-[#78716c] mb-2">Recent Badges</p>
+            <div className="flex gap-2">
+              {['⭐','🏅','🏆'].map((b,i) => (
+                <div key={i} className="bg-[#faf7f2] border border-[#e2d9c8] w-9 h-9 rounded-lg flex items-center justify-center text-base">
+                  {b}
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="text-gray-400 text-sm mb-3">Recent Badges</div>
-          <div className="flex gap-2 mb-4">
-            {['⭐','🏅','🏆'].map((b,i) => (
-              <div key={i} className="bg-[#05966915] border border-[#05966930] w-10 h-10 rounded-xl flex items-center justify-center text-lg">
-                {b}
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-[#0a0a0a] border border-[#e8dfc420] rounded-xl p-3 flex items-center gap-3">
-            <div className="bg-[#05966920] p-2 rounded-lg">
-              <Flame size={18} className="text-[#6ee7b7]" />
+          <div className="bg-[#faf7f2] border border-[#e2d9c8] rounded-xl p-3 flex items-center gap-3">
+            <div className="bg-[#92400e15] p-2 rounded-lg">
+              <Flame size={16} className="text-[#92400e]" />
             </div>
             <div>
-              <div className="text-[#e8dfc4] font-bold text-lg leading-none">7 Days</div>
-              <div className="text-gray-500 text-xs mt-1">Current streak</div>
+              <p className="text-[#1c1917] font-bold text-sm">7 Day Streak 🔥</p>
+              <p className="text-[#78716c] text-xs">Keep it going!</p>
             </div>
           </div>
 
