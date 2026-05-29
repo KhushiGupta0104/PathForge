@@ -10,6 +10,11 @@ import Footer from './components/Footer'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
+import Pathways from './pages/Pathways'
+import PathwayDetail from './pages/PathwayDetail'
+import LevelDetail from './pages/LevelDetail'
+import Profile from './pages/Profile'
+
 
 function LandingPage() {
   return (
@@ -34,6 +39,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/pathways" element={<Pathways />} />
+        <Route path="/pathway/:id" element={<PathwayDetail />} />
+        <Route path="/level/:id" element={<LevelDetail />} />
+        <Route path="/profile" element={<Profile />} />
+
       </Routes>
     </BrowserRouter>
   )
