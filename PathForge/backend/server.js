@@ -10,17 +10,20 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+// Test route — PEHLE
+app.get('/ping', (req, res) => {
+  res.json({ message: 'PathForge backend is live!' })
+})
+
 // Routes
 const authRoutes = require('./routes/auth.routes')
 app.use('/api/auth', authRoutes)
 
 const pathwayRoutes = require('./routes/pathway.routes')
-app.use('/api/pathways', pathwayRoutes) 
+app.use('/api/pathways', pathwayRoutes)
 
-// Test route
-app.get('/ping', (req, res) => {
-  res.json({ message: 'PathForge backend is live!' })
-})
+const progressRoutes = require('./routes/progress.routes')
+app.use('/api/progress', progressRoutes)
 
 const PORT = process.env.PORT || 5000
 
