@@ -14,6 +14,9 @@ app.use(express.json())
 const authRoutes = require('./routes/auth.routes')
 app.use('/api/auth', authRoutes)
 
+const pathwayRoutes = require('./routes/pathway.routes')
+app.use('/api/pathways', pathwayRoutes) 
+
 // Test route
 app.get('/ping', (req, res) => {
   res.json({ message: 'PathForge backend is live!' })
