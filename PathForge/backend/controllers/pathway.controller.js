@@ -19,7 +19,16 @@ const getPathwayById = async (req, res) => {
     if (!pathway) return res.status(404).json({ message: 'Pathway not found' })
 
     const levels = await Level.find({ pathwayId: req.params.id }).sort({ levelNumber: 1 })
-    res.json({ pathway, levels })
+    
+    const levelsWithCounts = await Promise.all(levels.map(async (level) => {
+      const taskCount = await Task.countDocuments({ levelId: level._id })
+      return {
+        ...level.toObject(),
+        taskCount,
+      }
+    }))
+
+    res.json({ pathway, levels: levelsWithCounts })
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message })
   }

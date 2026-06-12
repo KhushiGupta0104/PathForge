@@ -9,6 +9,12 @@ const taskSchema = new mongoose.Schema({
   xpReward: { type: Number, default: 100 },
   quizOptions: [{ type: String }],
   quizAnswer: { type: Number },
+  starterCode: { type: String },
+  solutionCode: { type: String },
+  testCases: [{
+    input: { type: String },
+    output: { type: String }
+  }]
 }, { timestamps: true })
 
 module.exports = mongoose.model('Task', taskSchema)

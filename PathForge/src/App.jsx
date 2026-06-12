@@ -14,11 +14,13 @@ import Pathways from './pages/Pathways'
 import PathwayDetail from './pages/PathwayDetail'
 import LevelDetail from './pages/LevelDetail'
 import Profile from './pages/Profile'
+import Achievements from './pages/Achievements'
+import Certificates from './pages/Certificates'
 
 
 function LandingPage() {
   return (
-    <div className="bg-[#faf7f2] min-h-screen">
+    <div className="bg-[#1a1a1a] min-h-screen text-[#eff1f6] flex flex-col">
       <Navbar />
       <HeroSection />
       <StatsSection />
@@ -41,8 +43,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pathways" element={<Pathways />} />
         <Route path="/pathway/:id" element={<PathwayDetail />} />
-        <Route path="/level/:id" element={<LevelDetail />} />
+        <Route path="/pathway/:pathwayId/level/:levelId" element={<LevelDetail />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/achievements" element={<Achievements />} />
+        <Route path="/certificates" element={<Certificates />} />
 
       </Routes>
     </BrowserRouter>

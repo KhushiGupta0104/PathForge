@@ -25,6 +25,15 @@ app.use('/api/pathways', pathwayRoutes)
 const progressRoutes = require('./routes/progress.routes')
 app.use('/api/progress', progressRoutes)
 
+const problemRoutes = require('./routes/problem.routes')
+app.use('/api/problems', problemRoutes)
+
+const aiRoutes = require('./routes/ai.routes')
+app.use('/api/ai', aiRoutes)
+
+const paymentRoutes = require('./routes/payment.routes')
+app.use('/api/payments', paymentRoutes)
+
 const PORT = process.env.PORT || 5000
 
 mongoose.connect(process.env.MONGO_URI)

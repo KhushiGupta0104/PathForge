@@ -41,6 +41,7 @@ const signup = async (req, res) => {
         level: user.level,
         streak: user.streak,
         badges: user.badges,
+        isPremium: user.isPremium,
       }
     })
 
@@ -83,6 +84,7 @@ const login = async (req, res) => {
         level: user.level,
         streak: user.streak,
         badges: user.badges,
+        isPremium: user.isPremium,
       }
     })
 

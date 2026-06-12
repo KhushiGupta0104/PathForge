@@ -9,16 +9,16 @@ const stats = [
 
 function StatsSection() {
   return (
-    <section className="bg-[#faf7f2] px-16 py-16 border-t border-[#e2d9c8]">
-      <div className="grid grid-cols-4 gap-6">
+    <section className="bg-[#1a1a1a] px-16 py-16 border-t border-[#3c3c3c] text-[#eff1f6] max-w-7xl mx-auto w-full">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((stat, i) => (
-          <div key={i} className="bg-white border border-[#e2d9c8] rounded-2xl p-6 flex flex-col items-start gap-3">
-            <div className="bg-[#92400e12] p-3 rounded-xl">
-              <stat.icon size={22} className="text-[#92400e]" />
+          <div key={i} className="bg-[#262626] border border-[#3c3c3c] rounded-3xl p-6 flex flex-col items-start gap-3 shadow-sm">
+            <div className="bg-[#ffa116]/10 p-3 rounded-xl">
+              <stat.icon size={22} className="text-[#ffa116]" />
             </div>
             <div>
-              <p className="text-3xl font-black text-[#1c1917]">{stat.value}</p>
-              <p className="text-sm text-[#78716c] mt-0.5">{stat.label}</p>
+              <p className="text-3xl font-black text-white">{stat.value}</p>
+              <p className="text-sm text-[#8a8a8a] mt-0.5 font-semibold">{stat.label}</p>
             </div>
           </div>
         ))}

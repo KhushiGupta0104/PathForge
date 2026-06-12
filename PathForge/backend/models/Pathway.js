@@ -8,6 +8,7 @@ const pathwaySchema = new mongoose.Schema({
   totalXP: { type: Number },
   tags: [{ type: String }],
   icon: { type: String },
+  isPremium: { type: Boolean, default: false },
 }, { timestamps: true })
 
 module.exports = mongoose.model('Pathway', pathwaySchema)
